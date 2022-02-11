@@ -23,11 +23,7 @@ let pokemonList = [
   }
 ];
 
-// Conditional checks if height > 5
-for (let i = 0; i < pokemonList.length; i++) {
-  if (pokemonList[i].height > 5) {
-    document.write(pokemonList[i].name + ( ', height: ' ) + pokemonList[i].height + " - Wow, that\'s big!" + '<br>');  }
-    else {
-      document.write(pokemonList[i].name + ( ', height: ' ) + pokemonList[i].height + '<br>');
-    }
-  }
+// 'forEach' loop instead of 'for' function. Used .getAll in order to retrieve pokemonList inside IIFE.
+pokemonRepository.getAll().forEach(function(pokemon) {
+  document.write(pokemon.name + ' height : ' + pokemon.height + '<br>');
+});
