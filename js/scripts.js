@@ -1,23 +1,25 @@
+// Created new pokemonRepository variable to hold what IIFE returns. Assigned IIFE to variable
+let pokemonRepository = (function () {
 let pokemonList = [
   {
     name: "Bulbasaur",
     height: 2.04,
-    type: ["grass","poison"]
+    type: ['grass','poison']
   },
   {
     name: "Ivysaur",
     height: 3.03,
-    type: ["grass","poison"]
+    type: ['grass','poison']
   },
   {
     name: "Venusaur",
     height: 6.07,
-    type: ["grass","poison"]
+    type: ['grass','poison']
   },
   {
     name: "Charmander",
     height: 2.00,
-    type: "fire"
+    type: 'fire'
   }
 ];
 
