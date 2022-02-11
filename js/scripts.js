@@ -23,6 +23,26 @@ let pokemonList = [
   }
 ];
 
+// Returns pokemonList array
+function getAll() {
+  return pokemonList;
+}
+
+// Adds Pokemon
+function add(item) {
+  pokemonList.push({name: 'Pikachu'});
+}
+
+// Return key-value-pairs
+return {
+    add: add,
+    getAll: getAll,
+  };
+
+})();
+
+pokemonRepository.add('Pikachu');
+
 // 'forEach' loop instead of 'for' function. Used .getAll in order to retrieve pokemonList inside IIFE.
 pokemonRepository.getAll().forEach(function(pokemon) {
   document.write(pokemon.name + ' height : ' + pokemon.height + '<br>');
