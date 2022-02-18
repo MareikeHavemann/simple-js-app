@@ -1,3 +1,7 @@
+:root {
+  --background-color_button: #357b70;
+}
+
 body {
   font-family: 'Source+Sans+Pro', sans-serif;
   font-weight: 400;
@@ -5,4 +9,49 @@ body {
   line-height: 1.4;
   text-align: center;
   margin-top: 100px;
+  list-style-type: none;
+}
+
+.poke-button,
+poke-button {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: var(--background-color_button);
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition-duration: 0.2s;
+  transition-property: opacity;
+  align-items: center;
+  list-style-type: none;
+  width: 80%;
+}
+
+.poke-button:visited {
+  color: white;
+}
+
+poke-button:hover,
+poke-button:focus,
+.poke-button:hover,
+.poke-button:focus {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/*responsive */
+@media all and (max-width: 500px) {
+  .poke-button {
+    width: 50%;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .poke-button {
+    width: 80%;
+  }
 }
