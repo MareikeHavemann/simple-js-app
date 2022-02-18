@@ -59,6 +59,8 @@ button.addEventListener('click', function(event) {
 return {
     add: add,
     getAll: getAll,
+    addListItem: addListItem,
+    showDetails: showDetails,
   };
 
 })();
