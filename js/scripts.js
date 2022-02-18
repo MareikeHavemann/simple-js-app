@@ -70,3 +70,7 @@ pokemonRepository.add('Pikachu');
 pokemonRepository.getAll().forEach(function(pokemon) {
   pokemonRepository.addListItem(pokemon);
 });
+
+function showDetails(pokemon) {
+  console.log(pokemon.name);
+}
