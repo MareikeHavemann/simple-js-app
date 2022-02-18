@@ -67,7 +67,6 @@ return {
 
 pokemonRepository.add('Pikachu');
 
-// 'forEach' loop instead of 'for' function. Used .getAll in order to retrieve pokemonList inside IIFE.
 pokemonRepository.getAll().forEach(function(pokemon) {
-  document.write(pokemon.name + ' height : ' + pokemon.height + '<br>');
+  pokemonRepository.addListItem(pokemon);
 });
