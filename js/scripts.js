@@ -33,6 +33,28 @@ function add(item) {
   pokemonList.push({name: 'Pikachu'});
 }
 
+// Funtion represents a single pokemon
+function addListItem(pokemon) {
+let variable = document.querySelector('.pokemon-list');
+// Creates li-element
+let listItem = document.createElement('li');
+// Creates button-element
+let button = document.createElement('button');
+// Sets buttons inner text to be the pokemon's name
+button.innerText = pokemon.name;
+// Adds a class to the button, which is targeted by CSS rule
+button.classList.add('poke-button');
+// Appends the button to the list item as its child
+listItem.appendChild(button);
+// Appends the list item to the ul as its child
+variable.appendChild(listItem);
+/* As for the event handler function: calls showDetails function,
+passing pokemon object as parameter when Pokémon is clicked. */
+button.addEventListener('click', function(event) {
+  showDetails(pokemon);
+});
+}
+
 // Return key-value-pairs
 return {
     add: add,
