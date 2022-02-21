@@ -27,6 +27,11 @@ function showLoadingMessage(){
 }
 
 // Funtion represents a single pokemon
+// Hides loadingMessage
+function hideLoadingMessage(){
+  console.log();
+}
+
 function addListItem(pokemon) {
 let variable = document.querySelector('.pokemon-list');
 // Creates li-element
