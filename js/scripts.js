@@ -21,6 +21,9 @@ function add(pokemon) {
     }
   }
 
+// Displays a loading message
+function showLoadingMessage(){
+  console.log('Please wait');
 }
 
 // Funtion represents a single pokemon
