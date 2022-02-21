@@ -26,19 +26,19 @@ function showLoadingMessage(){
   console.log('Please wait');
 }
 
-// Funtion represents a single pokemon
 // Hides loadingMessage
 function hideLoadingMessage(){
   console.log();
 }
 
+// Funtion represents a single Pokemon
 function addListItem(pokemon) {
 let variable = document.querySelector('.pokemon-list');
 // Creates li-element
 let listItem = document.createElement('li');
 // Creates button-element
 let button = document.createElement('button');
-// Sets buttons inner text to be the pokemon's name
+// Sets buttons inner text to be the Pokemon's name
 button.innerText = pokemon.name;
 // Adds a class to the button, which is targeted by CSS rule
 button.classList.add('poke-button');
@@ -47,7 +47,7 @@ listItem.appendChild(button);
 // Appends the list item to the ul as its child
 variable.appendChild(listItem);
 /* As for the event handler function: calls showDetails function,
-passing pokemon object as parameter when Pokémon is clicked. */
+passing Pokemon object as parameter when Pokemon is clicked. */
 button.addEventListener('click', function(event) {
   showDetails(pokemon);
 });
@@ -105,7 +105,6 @@ return {
     getAll: getAll,
     addListItem: addListItem,
     showDetails: showDetails,
-  };
     loadList: loadList,
     loadDetails: loadDetails,
     showLoadingMessage: showLoadingMessage,
