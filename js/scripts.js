@@ -92,6 +92,13 @@ function loadList() {
       });
     }
 
+// Existing showDetails function executes loadDetails
+    function showDetails(item) {
+  pokemonRepository.loadDetails(item).then(function () {
+    console.log(item);
+  });
+}
+
 // Return key-value-pairs
 return {
     add: add,
