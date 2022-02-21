@@ -106,6 +106,11 @@ return {
     addListItem: addListItem,
     showDetails: showDetails,
   };
+    loadList: loadList,
+    loadDetails: loadDetails,
+    showLoadingMessage: showLoadingMessage,
+    hideLoadingMessage: hideLoadingMessage,
+    };
 
 })();
 
