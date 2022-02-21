@@ -1,27 +1,9 @@
 // Created new pokemonRepository variable to hold what IIFE returns. Assigned IIFE to variable
+// Created new pokemonRepository variable to hold what IIFE returns. Assigned IIFE to variable.
 let pokemonRepository = (function () {
-let pokemonList = [
-  {
-    name: "Bulbasaur",
-    height: 2.04,
-    type: ['grass','poison']
-  },
-  {
-    name: "Ivysaur",
-    height: 3.03,
-    type: ['grass','poison']
-  },
-  {
-    name: "Venusaur",
-    height: 6.07,
-    type: ['grass','poison']
-  },
-  {
-    name: "Charmander",
-    height: 2.00,
-    type: 'fire'
-  }
-];
+  let pokemonList = [];
+  // Added API-URL
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
 // Returns pokemonList array
 function getAll() {
