@@ -1,4 +1,3 @@
-// Created new pokemonRepository variable to hold what IIFE returns. Assigned IIFE to variable
 // Created new pokemonRepository variable to hold what IIFE returns. Assigned IIFE to variable.
 let pokemonRepository = (function () {
   let pokemonList = [];
@@ -11,8 +10,17 @@ function getAll() {
 }
 
 // Adds Pokemon
-function add(item) {
-  pokemonList.push({name: 'Pikachu'});
+function add(pokemon) {
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon
+    ) {
+      pokemonList.push(pokemon);
+    } else {
+      console.log("pokemon is not correct");
+    }
+  }
+
 }
 
 // Funtion represents a single pokemon
