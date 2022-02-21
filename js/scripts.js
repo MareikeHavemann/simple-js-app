@@ -53,6 +53,27 @@ button.addEventListener('click', function(event) {
 });
 }
 
+/* Loads list of Pokemon: Fetches details from API, then adds each Pokemon in
+fetched data to pokemonList with the add function implemented earlier */
+function loadList() {
+  showLoadingMessage('Please wait');
+ return fetch(apiUrl).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      hideLoadingMessage();
+      json.results.forEach(function (item) {
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add(pokemon);
+      });
+    }).catch(function (e) {
+      hideLoadingMessage();
+      console.error(e);
+    })
+  }
+
 // Return key-value-pairs
 return {
     add: add,
