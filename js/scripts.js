@@ -5,10 +5,6 @@ let pokemonRepository = (function () {
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
   let modalContainer = document.querySelector('#modal-container');
 
-// Returns pokemonList array
-function getAll() {
-  return pokemonList;
-}
 
 // Adds Pokemon
 function add(pokemon) {
@@ -20,6 +16,11 @@ function add(pokemon) {
     } else {
       console.log("pokemon is not correct");
     }
+  }
+
+  // Returns pokemonList array
+  function getAll() {
+    return pokemonList;
   }
 
 // Displays a loading message
