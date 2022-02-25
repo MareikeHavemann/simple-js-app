@@ -35,9 +35,9 @@ function hideLoadingMessage(){
 
 // Funtion represents a single Pokemon
 function addListItem(pokemon) {
-let variable = document.querySelector('.pokemon-list');
+let pokemonList = document.querySelector('.pokemon-list');
 // Creates li-element
-let listItem = document.createElement('li');
+let listPokemon = document.createElement('li');
 // Creates button-element
 let button = document.createElement('button');
 // Sets buttons inner text to be the Pokemon's name
@@ -45,9 +45,9 @@ button.innerText = pokemon.name;
 // Adds a class to the button, which is targeted by CSS rule
 button.classList.add('poke-button');
 // Appends the button to the list item as its child
-listItem.appendChild(button);
+listPokemon.appendChild(button);
 // Appends the list item to the ul as its child
-variable.appendChild(listItem);
+pokemonList.appendChild(listPokemon);
 /* As for the event handler function: calls showDetails function,
 passing Pokemon object as parameter when Pokemon is clicked. */
 button.addEventListener('click', function(event) {
