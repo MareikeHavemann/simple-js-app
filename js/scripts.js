@@ -94,11 +94,12 @@ function loadList() {
       });
     }
 
-// Existing showDetails function executes loadDetails
-    function showDetails(item) {
-  pokemonRepository.loadDetails(item).then(function () {
-    console.log(item);
-  });
+    // Existing showDetails function executes loadDetails
+        function showDetails(pokemon) {
+      pokemonRepository.loadDetails(pokemon).then(function () {
+        showModal(pokemon);
+      });
+    }
 
 // Modal:
 function showModal(pokemon) {
@@ -168,8 +169,7 @@ return {
     showDetails: showDetails,
     loadList: loadList,
     loadDetails: loadDetails,
-    showLoadingMessage: showLoadingMessage,
-    hideLoadingMessage: hideLoadingMessage,
+    showModal: showModal,
     };
 
 })();
@@ -183,6 +183,6 @@ pokemonRepository.loadList().then(function() {
 
 function showDetails(pokemon) {
   loadDetails(pokemon).then(function () {
-  console.log(pokemon.name);
+  showModal();
 });
 }
