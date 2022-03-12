@@ -23,15 +23,7 @@ function add(pokemon) {
     return pokemonList;
   }
 
-// Displays a loading message
-function showLoadingMessage(){
-  console.log('Please wait');
-}
 
-// Hides loadingMessage
-function hideLoadingMessage(){
-  console.log();
-}
 
 // Funtion represents a single Pokemon
 function addListItem(pokemon) {
@@ -55,14 +47,8 @@ button.addEventListener('click', function(event) {
 });
 }
 
-/* Loads list of Pokemon: Fetches details from API, then adds each Pokemon in
-fetched data to pokemonList with the add function implemented earlier */
-function loadList() {
-  showLoadingMessage('Please wait');
- return fetch(apiUrl).then(function (response) {
       return response.json();
     }).then(function (json) {
-      hideLoadingMessage();
       json.results.forEach(function (item) {
         let pokemon = {
           name: item.name,
@@ -71,25 +57,21 @@ function loadList() {
         add(pokemon);
       });
     }).catch(function (e) {
-      hideLoadingMessage();
       console.error(e);
     })
   }
 
   // Loads detailed data for a given Pokemon
   function loadDetails(item) {
-      showLoadingMessage('Please wait');
       let url = item.detailsUrl;
       return fetch(url).then(function (response) {
         return response.json();
       }).then(function (details) {
-        hideLoadingMessage();
         // Now adding details to the item:
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
         item.types = details.types;
       }).catch(function (e) {
-        hideLoadingMessage();
         console.error(e);
       });
     }
