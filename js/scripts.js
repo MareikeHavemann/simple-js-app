@@ -23,6 +23,10 @@ function add(pokemon) {
     return pokemonList;
   }
 
+  // Finds Pokemon by name
+  function findPokemon(searchName){
+    // Clear the all the buttons on the page when user types in search box
+    $('.pokemon-list').empty();
 
 
 // Funtion represents a single Pokemon
