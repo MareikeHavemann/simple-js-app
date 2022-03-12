@@ -29,6 +29,13 @@ let pokemonRepository = (function () {
     $('.pokemon-list').empty();
 
 
+    // Adds pokemon
+    pokemonList.forEach((pokemon) => {
+      if (pokemon.name.toLowerCase().includes(searchName.toLowerCase())){
+        addListItem(pokemon);
+      }
+    })
+  }
 
       return response.json();
     }).then(function (json) {
