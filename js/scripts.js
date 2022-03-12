@@ -6,8 +6,8 @@ let pokemonRepository = (function () {
   let modalContainer = document.querySelector('#modal-container');
 
 
-// Adds Pokemon
-function add(pokemon) {
+  // Adds Pokemon
+  function add(pokemon) {
     if (
       typeof pokemon === "object" &&
       "name" in pokemon
