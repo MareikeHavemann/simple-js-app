@@ -108,65 +108,39 @@ function showDetails(pokemon) {
 
 // Modal:
 function showModal(pokemon) {
-  // Clear all existing modal content
-  modalContainer.innerHTML = '';
+  let modalBody = $('.modal-body');
+  let modalTitle = $('.modal-title');
+  let modalHeader = $('.modal-header');
+  // Clears modal
+  modalTitle.empty();
+  modalBody.empty();
+
 
   let modal = document.createElement('div');
   modal.classList.add('modal');
 
-  // Add the new modal content
-  let closeButtonElement = document.createElement('button');
-  closeButtonElement.classList.add('modal-close');
-  closeButtonElement.innerText = 'Close';
-  closeButtonElement.addEventListener('click', hideModal);
+  let pokemonName = $('<h1>' + pokemon.name + '</h1>');
 
-  let pokemonName = document.createElement('h1');
-  pokemonName.innerText = pokemon.name;
+  let imageElement = document.createElement('img');
+  imageElement.classList.add('modal-img');
+  imageElement.src = pokemon.imageUrl;
 
-  let pokemonHeight = document.createElement('p');
-  pokemonHeight.innerText = 'Height: ' + pokemon.height;
+  let pokemonHeight = $('<p>' + 'Height: ' + pokemon.height + '</p>');
 
-  let pokemonImage = document.createElement('img');
-  pokemonImage.classList.add('pokemon-modal-image');
-  pokemonImage.src = pokemon.imageUrl;
+  let pokemonWeight = $('<p>' + 'Weight: ' + pokemon.weight + '</p>');
 
-  modal.appendChild(closeButtonElement);
-  modal.appendChild(pokemonName);
-  modal.appendChild(pokemonHeight);
-  modal.appendChild(pokemonImage);
-  modalContainer.appendChild(modal);
+  let pokemonAbilities = $('<p>' + 'Abilities: ' + pokemon.abilities + '</p>');
 
-  modalContainer.classList.add('is-visible');
+  let pokemonTypes = $('<p>' + 'Types: ' + pokemon.types.join(', ') + '<p>');
+
+  modalTitle.append(pokemonName);
+  modalBody.append(imageElement);
+  modalBody.append(pokemonHeight);
+  modalBody.append(pokemonWeight);
+  modalBody.append(pokemonAbilities);
+  modalBody.append(pokemonTypes);
 }
 
-function hideModal() {
-  modalContainer.classList.remove('is-visible');
-}
-
-document.querySelector('#show-modal').addEventListener('click', () => {
-  showModal('Modal title', 'This is the modal content!');
-});
-
-window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-    hideModal();
-  }
-});
-
-modalContainer.addEventListener('click', (e) => {
-  // Since this is also triggered when clicking INSIDE the modal container,
-  // We only want to close if the user clicks directly on the overlay
-  let target = e.target;
-  if (target === modalContainer) {
-    hideModal();
-  }
-});
-
-document.querySelector('#show-modal').addEventListener('click', () => {
-    showModal('Modal title', 'This is the modal content!');
-  });
-
-// Return key-value-pairs
 return {
     add: add,
     getAll: getAll,
