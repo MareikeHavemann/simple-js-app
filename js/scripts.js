@@ -57,25 +57,54 @@ let pokemonRepository = (function () {
 
   // Loads detailed data for a given Pokemon
   function loadDetails(item) {
-      let url = item.detailsUrl;
-      return fetch(url).then(function (response) {
-        return response.json();
-      }).then(function (details) {
-        // Now adding details to the item:
-        item.imageUrl = details.sprites.front_default;
-        item.height = details.height;
-        item.types = details.types;
-      }).catch(function (e) {
-        console.error(e);
-      });
-    }
+    let url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
 
-    // Existing showDetails function executes loadDetails
-        function showDetails(pokemon) {
-      pokemonRepository.loadDetails(pokemon).then(function () {
-        showModal(pokemon);
-      });
-    }
+      // Adds details to the Pokemon:
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.weight = details.weight;
+      item.types = details.types;
+    }).catch(function (e) {
+      hideLoadingMessage();
+      console.error(e);
+    });
+  }
+
+  function addListItem(pokemon) {
+    let listGroupElement = document.querySelector('.pokemon-list');
+    // Creates li-element
+    let listItemButton = document.createElement('button');
+    // Sets buttons inner text to be the Pokemon's name
+    listItemButton.innerText = pokemon.name;
+    // Adds a class to the button, which is targeted by CSS rule
+
+    listItemButton.classList.add('list-group-item', 'list-group-item-action',
+    'text-center', 'text-uppercase');
+    // Adds the data toggle and data target to trigger the modal
+    listItemButton.setAttribute('data-toggle', 'modal');
+    listItemButton.setAttribute('data-target', '#modal-container');
+    // Appends the button to  parent div element
+    listGroupElement.appendChild(listItemButton);
+
+  // Adds an event listener
+  buttonEventListener(listItemButton, pokemon);
+}
+// function adds event listener to a button to show Pokemons details when the button is clicked
+function buttonEventListener(button, pokemon){
+  button.addEventListener('click', function(){
+    showDetails(pokemon);
+  });
+}
+
+// Existing showDetails function executes loadDetails
+function showDetails(pokemon) {
+  loadDetails(pokemon).then(function () {
+    showModal(pokemon);
+  });
+}
 
 // Modal:
 function showModal(pokemon) {
