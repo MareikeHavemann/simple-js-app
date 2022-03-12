@@ -142,14 +142,13 @@ function showModal(pokemon) {
 }
 
 return {
-    add: add,
-    getAll: getAll,
-    addListItem: addListItem,
-    showDetails: showDetails,
-    loadList: loadList,
-    loadDetails: loadDetails,
-    showModal: showModal,
-    };
+  add: add,
+  getAll: getAll,
+  addListItem: addListItem,
+  showDetails: showDetails,
+  loadList: loadList,
+  findPokemon: findPokemon,
+};
 
 })();
 
@@ -159,9 +158,3 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-function showDetails(pokemon) {
-  loadDetails(pokemon).then(function () {
-  showModal();
-});
-}
