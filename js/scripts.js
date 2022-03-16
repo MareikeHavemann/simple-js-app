@@ -129,15 +129,12 @@ function showModal(pokemon) {
 
   let pokemonWeight = $('<p>' + 'Weight: ' + pokemon.weight + '</p>');
 
-  let pokemonAbilities = $('<p>' + 'Abilities: ' + pokemon.abilities + '</p>');
-
-  let pokemonTypes = $('<p>' + 'Types: ' + pokemon.types.join(', ') + '<p>');
+  let pokemonTypes = $('<p>' + 'Type(s): ' + pokemon.types[0].type.name + '<p>');
 
   modalTitle.append(pokemonName);
   modalBody.append(imageElement);
   modalBody.append(pokemonHeight);
   modalBody.append(pokemonWeight);
-  modalBody.append(pokemonAbilities);
   modalBody.append(pokemonTypes);
 }
 
@@ -145,7 +142,6 @@ return {
   add: add,
   getAll: getAll,
   addListItem: addListItem,
-  showDetails: showDetails,
   loadList: loadList,
   findPokemon: findPokemon,
 };
