@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=no">
@@ -10,8 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="container">
-
     <!-- Bootstrap navbar -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
       <a class="navbar-brand" href="#">
@@ -23,13 +20,10 @@
       <div class="collapse navbar-collapse" id="searchBox">
         <ul class="navbar-nav mr-auto"></ul>
         <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" onfocus=this.value='' type="text" placeholder="Search Pokemon" aria-label="Search Pokemon" onkeyup="pokemonRepository.findPokemon(this.value)">
         </form>
       </div>
     </nav>
   </header>
-  <main>
-
     <!-- Modal -->
     <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -44,11 +38,8 @@
         </div>
       </div>
     </div>
-
     <!-- Pokemon list -->
-    <div class="row">
       <div class="pokemon-list list-group col-6 col-md-4"></div>
-    </div>
   </main>
 
   <script src="js/promise-polyfill.js"></script>
