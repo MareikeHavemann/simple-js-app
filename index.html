@@ -12,14 +12,21 @@
   <header class="page-header">
     <!-- Bootstrap navbar -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top">
-      <!-- Search box -->
-      <div class="collapse navbar-collapse" id="searchBox">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/pokemon-logo.png" width="100" height="100" class="pokemon-logo d-inline-block align-top" alt="Pokémon logo">
+      </a>
+      <!-- Search bar -->
+      <ul class="navbar-nav mr-auto"></ul>
+      <div class="collapse navbar-collapse" id="search-pokemon">
         <ul class="navbar-nav mr-auto"></ul>
         <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" onfocus="this.value=''" type="text" placeholder="Search Pokemon" aria-label="Search bar for Pokemon" onkeyup="pokemonRepository.findPokemon(this.value)">
         </form>
       </div>
+      <button type="submit" class="btn btn-danger">Search</button>
     </nav>
   </header>
+</nav>
     <!-- Modal -->
     <div class="modal fade" id="modal-container" tabindex="-1" role="dialog" aria-labelledby="pokemonModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
