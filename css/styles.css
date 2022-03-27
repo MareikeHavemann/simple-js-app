@@ -1,5 +1,5 @@
 body {
-background-color: #d3d3d3;
+  background-color: #d3d3d3;
 }
 
 .h1-header {
@@ -29,12 +29,15 @@ background-color: #d3d3d3;
 }
 
 #pokemonModalLabel {
-color: #dc3545;
+  color: #dc3545;
 }
 
 .list-group-item {
   color: #dc3545;
   border-color: #ffc107;
+  cursor: pointer;
+}
+
 }
 
 @supports (display: grid) {
