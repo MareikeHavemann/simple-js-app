@@ -38,6 +38,9 @@ body {
   cursor: pointer;
 }
 
+.modal-img {
+  width: 40%;
+  margin-bottom: 20px;
 }
 
 @supports (display: grid) {
