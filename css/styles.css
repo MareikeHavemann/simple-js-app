@@ -47,7 +47,7 @@ body {
   }
 }
 
-  @media (min-width: 500px) and (max-width: 750px) {
+@media (min-width: 500px) and (max-width: 750px) {
   .pokemon-list {
     grid-template-columns: 1fr 1fr;
   }
@@ -57,3 +57,4 @@ body {
   .pokemon-list {
     grid-template-columns: 1fr;
   }
+}
